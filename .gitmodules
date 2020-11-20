@@ -1,0 +1,3 @@
+[submodule "mkhtaccess_red"]
+	path = mkhtaccess_red
+	url = https://github.com/violentlydave/mkhtaccess_red.git
