@@ -1,8 +1,9 @@
 #!/bin/bash
 
-sudo apt install -y git
+sudo apt install -y git dnsrecon
 
 mkdir ~/opt
+mkdir ~/.vpn
 cd ~/opt
 
 # Installing trevorspray
@@ -35,16 +36,29 @@ git clone https://github.com/initstring/linkedin2username
 cd linkedin2username
 pip3 install -r requirements.txt
 
-wget -q -O - https://git.io/vQhTU | bash
+# Installs go
+# wget -q -O - https://git.io/vQhTU | bash
 
 
 # Hunter.io from tty
 # github.com/picatz/hunter
 go get -u -v github.com/picatz/hunter
 
+# Golang crap
+go get -u -v github.com/bigb0sss/goPassGen
+go get -u -v github.com/busterb/msmailprobe
+go get -u github.com/patrickhener/goshs
+
+
+# Other other junk
 cd ~/opt
-git clone https://github.com/bigb0sss/goPassGen.git
-cd goPassGen
-go build goPassGen.go
-sudo mv goPassGen /usr/bin/gopassgen
+git clone https://github.com/xFreed0m/SMTPTester
+cd SMTPTester
+pip3 install -r requirements.txt
+
+# Go to page like this https://www.zoominfo.com/pic/epic-systems-corporation/41307249 to use
+# Protected by cloudflare so use proxycannon
+cd ~/opt
+git clone https://github.com/waffl3ss/ZIPuller
+pip3 install cloudbrute pyfiglet
 
