@@ -18,3 +18,5 @@ for i in owa post mail mymail exchange autodiscover exch exch01 outlook
 do
         host $i.$domain | tee -a exchange-enum."$domain".txt
 done
+
+curl -sk "https://login.microsoftonline.com/getuserrealm.srf?login=test@"$domain"&xml=1" | tee o365usage.xml
