@@ -3,9 +3,10 @@
 # A really crap script to get info on target domain mail servers
 # Usage: ./mail-recon.sh acme.com
 
-pip3 install mailspoof
-pip3 install checkdmarc
-apt install dnsutils -y
+# You might need to...
+# pip3 install mailspoof
+# pip3 install checkdmarc
+# apt install dnsutils -y
 
 domain="$1"
 
@@ -19,4 +20,4 @@ do
         host $i.$domain | tee -a exchange-enum."$domain".txt
 done
 
-curl -sk "https://login.microsoftonline.com/getuserrealm.srf?login=test@"$domain"&xml=1" | tee o365usage.xml
+curl -sk "https://login.microsoftonline.com/getuserrealm.srf?login=test@"$domain"" | jq | tee o365usageenum.json
