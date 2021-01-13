@@ -3,6 +3,9 @@
 echo "Updating naabu"
 GO111MODULE=on go get -u  github.com/projectdiscovery/naabu/v2/cmd/naabu
 
+echo "Updating anew"
+GO111MODULE=on go get -u github.com/tomnomnom/anew 
+
 echo "Updating nuclei"
 GO111MODULE=on go get -u  github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 
